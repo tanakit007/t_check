@@ -8,31 +8,31 @@ import RegisterPage from "../pages/RegisterPage";
 const router = createBrowserRouter(
   [
     {
+      // ใช้ basename ในการจัดการเส้นทางหลัก
       path: "/",
       element: <MainLayout />,
       children: [
         {
-          path: "/",
+          index: true, // ใช้ index: true แทน path: '/' สำหรับหน้าแรก
           element: <HomePage />,
         },
         {
-          path: "/chat",
+          path: "chat", // ไม่ต้องมี / ข้างหน้าใน children
           element: <ChatPage />,
         },
         {
-          path: "/login",
+          path: "login",
           element: <LoginPage />,
         },
         {
-          path: "/register",
+          path: "register",
           element: <RegisterPage />,
         },
       ],
     },
   ],
   {
-    // เพิ่ม basename เพื่อให้แมตช์กับ URL ของ GitHub Pages
-    basename: "/t_check",
+    basename: "/t_check", // ยืนยันว่าต้องมีบรรทัดนี้
   },
 );
 
